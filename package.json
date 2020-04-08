@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/netliva/symfony-form-js#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "bloodhound-js": "^1.2.3"
   }
 }
