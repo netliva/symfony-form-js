@@ -1,0 +1,27 @@
+{
+  "name": "@netliva/symfony-form",
+  "version": "0.0.1",
+  "description": "Netliva Symfony Form Bundle için JS Kütüphanesi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netliva/symfony-form-js.git"
+  },
+  "keywords": [
+    "symfony",
+    "forms",
+    "bundle"
+  ],
+  "author": "Netliva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/netliva/symfony-form-js/issues"
+  },
+  "homepage": "https://github.com/netliva/symfony-form-js#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
