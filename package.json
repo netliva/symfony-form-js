@@ -23,6 +23,8 @@
   "homepage": "https://github.com/netliva/symfony-form-js#readme",
   "dependencies": {
     "jquery": "^3.4.1",
-    "bloodhound-js": "^1.2.3"
+    "jquery-typeahead": "^2.11.0",
+    "tempusdominus-bootstrap-4": "^5.1.2",
+    "moment": "^2.24.0"
   }
 }
