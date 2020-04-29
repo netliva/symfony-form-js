@@ -91,6 +91,7 @@
 		$(".be_netliva_collection_type").each(function() {
 			function afterAddItem($addedElement, source)
 			{
+				createNetlivaCollection();
 				if (typeof window[$(this).data("formId")+'_collect_function'] === 'function')
 				{
 					window[$(this).data("formId")+'_collect_function']($addedElement, source);
