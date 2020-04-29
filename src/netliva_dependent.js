@@ -1,6 +1,22 @@
 (function ($, window) {
 
-	window.netlivaDependentPrepeare = function (formId, dependId, settings)
+	window.netlivaDependentCreate = function()
+	{
+		$(".be_netliva_dependent").each(function() {
+			$(this).removeClass("be_netliva_dependent").addClass("netliva_dependent");
+			netlivaDependentPrepeare(
+				$(this).attr("id"),
+				$(this).data("dependTo"),
+				{
+					value: $(this).data("value"),
+					default: $(this).data("default"),
+					option_path: $(this).data("path"),
+				}
+			);
+		});
+	};
+
+	var netlivaDependentPrepeare = function (formId, dependId, settings)
 	{
 		settings = $.extend({
 			value: null,
@@ -12,14 +28,12 @@
 		var ajx;
 		$dependent.change(function(){
 			var val = $(this).val();
-			console.log(val);
 			$element.prop("disabled",true).html("<option>Yükleniyor...</option>");
 			if (ajx != undefined)
 			{
 				ajx.abort();
 				setTimeout(function () { $("#loading").hide();},1000);
 			}
-			// console.log(formId, "- ",val);
 			if (val)
 			{
 				ajx = $.ajax({
@@ -52,7 +66,11 @@
 		});
 		if (settings.value || $dependent.val())
 			$dependent.change();
-		
+
 	};
 
 })(jQuery, window);
+
+$(document).ajaxComplete(netlivaDependentCreate);
+jQuery(netlivaDependentCreate);
+
