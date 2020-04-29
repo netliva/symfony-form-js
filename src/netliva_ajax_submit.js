@@ -1,3 +1,5 @@
+import 'jquery-form';
+
 (function ($, window) {
 
 	window.ajaxFormCreate = function()
