@@ -17,7 +17,6 @@ import 'tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css';
 			if($input.data('viewFormat') === "HH:mm") val = moment("2000-01-01 "+val);
 			else val = moment(val);
 		}
-		console.log(val);
 
 		$input.datetimepicker({
 			locale: 'tr',

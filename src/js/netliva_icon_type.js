@@ -99,7 +99,6 @@
 			}
 		}
 
-		console.log(settings);
 		let $form_row = this;
 
 		$form_row.find("button").click(function () {
