@@ -110,7 +110,7 @@
 			settings = $.extend({
 				addBtnText:'Ekle',
 				prototypeName:$(this).data("prototypeName"),
-				delBtnText:'<i class="fa fa-times"></i>',
+				delBtnText:'<i class="fa fa-trash-alt"></i>',
 				afterAction: afterAddItem
 			}, $(this).data("jsSettings"));
 
