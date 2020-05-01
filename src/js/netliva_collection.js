@@ -44,8 +44,17 @@
 		});
 	};
 
-	$.fn.collection = function(settings)
+
+	var func_stack = {};
+
+	$.fn.collection = function(settings, func)
 	{
+		if (typeof settings == 'string' && settings === "add_function")
+		{
+			func_stack[$(this).data("formId")] = func;
+			return;
+		}
+
 		settings = $.extend({
 			prototypeName:'__name__',
 			addBtnText:'Ekle',
@@ -83,7 +92,6 @@
 
 			settings.afterAction($newForm);
 		});
-
 	};
 
 	window.createNetlivaCollection = function()
@@ -93,11 +101,10 @@
 	    	let formId = $(this).data("formId");
 			function afterAddItem($addedElement, source)
 			{
-				console.log(formId);
 				if (typeof window[formId+'_collect_function'] === 'function')
-				{
 					window[formId+'_collect_function']($addedElement, source);
-				}
+				if (typeof func_stack[formId] === 'function')
+					func_stack[formId]($addedElement, source);
 			}
 
 			settings = $.extend({
