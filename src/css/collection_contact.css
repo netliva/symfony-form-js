@@ -1,0 +1,26 @@
+.netliva_contact_type_area {
+	padding: 0 20px;
+	left: 0;
+	background: lightgray;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display:none;
+	align-items:center;
+	z-index:1;
+}
+.netliva_contact_type_area .btn { margin-left:10px; }
+.netliva_contact_type_area.open {display:flex;}
+.netliva_contact_fields {display:flex;flex: 2;}
+.netliva_collection_contact_area ul li {display:flex;justify-content: center;}
+
+.netliva_collection_contact_area .contactContent { margin:0 10px; }
+.netliva_collection_contact_area .notiLabel { margin:8px 0 0 10px; }
+.netliva_collection_contact_area .ntlcol-delete-button {
+	display: inline-block !important;
+	position: relative !important;
+	top: auto !important;
+	margin-left: 10px;
+}
+.selectContactTypeBtn i {width: 16px;}
