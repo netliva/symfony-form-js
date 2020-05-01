@@ -88,13 +88,15 @@
 
 	window.createNetlivaCollection = function()
 	{
-		$(".be_netliva_collection_type").each(function() {
+		$(".be_netliva_collection_type").each(function()
+	    {
+	    	let formId = $(this).data("formId");
 			function afterAddItem($addedElement, source)
 			{
-				createNetlivaCollection();
-				if (typeof window[$(this).data("formId")+'_collect_function'] === 'function')
+				console.log(formId);
+				if (typeof window[formId+'_collect_function'] === 'function')
 				{
-					window[$(this).data("formId")+'_collect_function']($addedElement, source);
+					window[formId+'_collect_function']($addedElement, source);
 				}
 			}
 
