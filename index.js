@@ -8,4 +8,5 @@ import "./src/js/icon_type"
 import "./src/js/treeselect"
 
 import "./src/css/collection_contact.css"
+import "./src/css/collection.css"
 import "./src/css/icon_type.css"

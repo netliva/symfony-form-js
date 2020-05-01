@@ -1,0 +1,6 @@
+.netliva_collection_container legend { background:white; margin: 0 0 -10px 20px; padding: 0 6px; position: relative; width: auto; z-index: 10; flex: auto; max-width: fit-content; }
+.netliva_collection_container legend + div { width: 100%; flex: 0 0 100%; max-width: 100%; }
+.collection_type .ntlcol-delete-button { position: absolute; top: 20px; display:none; }
+.collection_type li:hover .ntlcol-delete-button { display: block; }
+.collection_type li:not(.addCollBtn):hover { background-color: rgba(0, 0, 0, 0.02); }
+.collection_type li.addCollBtn { text-align: center; }
