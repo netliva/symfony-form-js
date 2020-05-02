@@ -6,6 +6,7 @@ import "./src/js/ajax_submit"
 import "./src/js/dependent"
 import "./src/js/icon_type"
 import "./src/js/treeselect"
+import "./src/js/number_spin"
 
 import "./src/css/collection_contact.css"
 import "./src/css/collection.css"
