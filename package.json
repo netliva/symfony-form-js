@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/netliva/symfony-form-js#readme",
   "dependencies": {
+    "@claviska/jquery-minicolors": "^2.3.4",
     "jquery": "^3.4.1",
     "jquery-typeahead": "^2.11.0",
     "bootstrap-tagsinput": "^0.7.1",

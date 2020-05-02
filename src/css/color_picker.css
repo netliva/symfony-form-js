@@ -1,0 +1,13 @@
+.netliva_color_picker .minicolors {
+	width: 100%;
+}
+.netliva_color_picker input {
+	height: calc(1.5em + 0.75rem + 2px) !important;
+	display: block !important;
+	width: 100% !important;
+	padding-left: 40px !important;
+}
+.netliva_color_picker .minicolors-swatch {
+	height: 28px !important;
+	width: 28px !important;
+}
