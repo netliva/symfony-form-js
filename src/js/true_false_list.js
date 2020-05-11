@@ -79,16 +79,9 @@ import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css";
 						var kids = element.children();
 						kids.sort(function (a, b)
 						{
-							if (settings.dataName === 'intext')
-							{
-								var an = $(a).text(),
-									bn = $(b).text();
-							}
-							else
-							{
-								var an = $(a).data(settings.dataName),
-									bn = $(b).data(settings.dataName);
-							}
+							var an = settings.dataName === 'intext' ? $(a).text() : $(a).data(settings.dataName),
+								bn = settings.dataName === 'intext' ? $(b).text() : $(b).data(settings.dataName);
+
 
 							if (an > bn) { return 1; }
 							if (an < bn) { return -1; }
