@@ -51,7 +51,6 @@ import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css";
 							tf.vals[$(this).parents("li").data("key")].is_active=state?1:0;
 							tf.e.input.val(JSON.stringify(tf.vals));
 						}
-						console.log(tf.switchOptions);
 						tf.e.list.find('.tfListInputSwitch').each(function () {
 							$(this).bootstrapSwitch(tf.switchOptions).bootstrapSwitch("size", tf.switchOptions.size);
 							if ($(this).prop("checked"))
