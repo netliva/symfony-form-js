@@ -1,6 +1,6 @@
 import Inputmask from "inputmask";
 
-(function ($, Inputmask) {
+(function ($, w, Inputmask) {
 
 	function contactCollect ($addedElement)
 	{
@@ -66,7 +66,6 @@ import Inputmask from "inputmask";
 		});
 	}
 
-	$(document).ajaxComplete(init);
-	init();
+	w.netliva_collection_contact_init = () => { init(); };
 
-})(jQuery, Inputmask);
+})(jQuery, window, Inputmask);

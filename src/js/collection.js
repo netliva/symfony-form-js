@@ -105,6 +105,8 @@
 					window[formId+'_collect_function']($addedElement, source);
 				if (typeof func_stack[formId] === 'function')
 					func_stack[formId]($addedElement, source);
+
+				window.createNetlivaCollection();
 			}
 
 			settings = $.extend({
@@ -118,6 +120,8 @@
 			$(this).find("li:not(.addCollBtn)").each(function () { afterAddItem($(this),"still"); });
 			$(this).removeClass("be_netliva_collection_type");
 		});
+
+		window.netliva_collection_contact_init();
 	};
 
 })(jQuery, window);
