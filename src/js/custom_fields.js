@@ -30,7 +30,7 @@ import Inputmask from "inputmask";
 					init: () => {
 						if (typeof ncf.data.vals.fields !== "object") ncf.data.vals = {count:0, fields:{}};
 						ncf.el.new_btn.click(ncf.actions.add_new);
-						ncf.el.type_btns.find("button").click(ncf.actions.field_btn_click);
+						ncf.el.type_btns.hide().find("button").click(ncf.actions.field_btn_click);
 						ncf.el.area.find(".ncf-field-options-choice textarea").keyup(ncf.actions.choice_text_counter);
 						ncf.el.area.find(".ncf-field-options button.btn-primary").click(ncf.actions.field_add);
 						ncf.refresh_list();
