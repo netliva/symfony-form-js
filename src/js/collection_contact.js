@@ -1,6 +1,6 @@
 import Inputmask from "inputmask";
 
-(function ($, w, Inputmask) {
+(function ($, window, Inputmask) {
 
 	function contactCollect ($addedElement)
 	{
@@ -58,15 +58,13 @@ import Inputmask from "inputmask";
 	}
 
 
-	function init()
+	window.netliva_collection_contact_init = () =>
 	{
 		$(".netliva_collection_contact_area > ul:not(.cc_binded)").each(function () {
 			$(this).addClass("cc_binded");
 			$(this).collection("add_function", contactCollect);
 		});
 	}
-
-	$(document).on("netliva:collectionAdded",init);
 
 
 })(jQuery, window, Inputmask);

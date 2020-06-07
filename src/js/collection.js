@@ -96,6 +96,8 @@
 
 	window.createNetlivaCollection = function()
 	{
+		window.netliva_collection_contact_init();
+
 		$(".be_netliva_collection_type").each(function()
 	    {
 	    	let $e = $(this);
@@ -109,7 +111,7 @@
 
 				if (source !== "still")
 				{
-					window.createNetlivaCollection();
+					createNetlivaCollection();
 					$(document).trigger("netliva:collectionNewItem", [$e, $addedElement, source]);
 					$e.trigger("netliva:collectionNewItem", [$addedElement, source]);
 				}
