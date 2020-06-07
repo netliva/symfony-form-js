@@ -69,8 +69,9 @@
 
 	};
 
-})(jQuery, window);
+	$(document).ajaxComplete(netlivaDependentCreate);
+	$(document).on("netliva:collectionNewItem",netlivaDependentCreate);
+	jQuery(netlivaDependentCreate);
 
-$(document).ajaxComplete(netlivaDependentCreate);
-jQuery(netlivaDependentCreate);
+})(jQuery, window);
 

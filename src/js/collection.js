@@ -98,7 +98,8 @@
 	{
 		$(".be_netliva_collection_type").each(function()
 	    {
-	    	let formId = $(this).data("formId");
+	    	let $e = $(this);
+	    	let formId = $e.data("formId");
 			function afterAddItem($addedElement, source)
 			{
 				if (typeof window[formId+'_collect_function'] === 'function')
@@ -106,7 +107,15 @@
 				if (typeof func_stack[formId] === 'function')
 					func_stack[formId]($addedElement, source);
 
-				if (source !== "still") window.createNetlivaCollection();
+				if (source !== "still")
+				{
+					window.createNetlivaCollection();
+					$(document).trigger("netliva:collectionNewItem", [$e, $addedElement, source]);
+					$e.trigger("netliva:collectionNewItem", [$addedElement, source]);
+				}
+
+				$(document).trigger("netliva:collectionAdded", [$e, $addedElement, source]);
+				$e.trigger("netliva:collectionAdded", [$addedElement, source]);
 			}
 
 			settings = $.extend({
@@ -120,8 +129,6 @@
 			$(this).find("li:not(.addCollBtn)").each(function () { afterAddItem($(this),"still"); });
 			$(this).removeClass("be_netliva_collection_type");
 		});
-
-		window.netliva_collection_contact_init();
 	};
 
 })(jQuery, window);

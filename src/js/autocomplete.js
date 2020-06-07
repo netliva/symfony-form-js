@@ -116,9 +116,10 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 				$(this).netlivaAutocomplete();
 			}
 		});
-	};
+	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery );

@@ -67,6 +67,7 @@ import NetlivaSimpleModal from './modal';
 	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery, NetlivaSimpleModal );

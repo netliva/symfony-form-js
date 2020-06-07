@@ -141,6 +141,7 @@ import 'bootstrap-tagsinput/src/bootstrap-tagsinput.css'
 	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery );

@@ -324,6 +324,7 @@ import Inputmask from "inputmask";
 	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery, NetlivaSimpleModal, Inputmask);

@@ -26,6 +26,7 @@ import '@claviska/jquery-minicolors/jquery.minicolors.css'
 	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery );

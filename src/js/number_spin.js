@@ -14,6 +14,7 @@ import 'bootstrap-touchspin'
 	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery );

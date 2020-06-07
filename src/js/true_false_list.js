@@ -98,6 +98,7 @@ import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css";
 	}
 
 	$(document).ajaxComplete(init);
+	$(document).on("netliva:collectionNewItem",init);
 	init();
 
 })( jQuery, Sortable);

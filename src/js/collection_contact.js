@@ -66,6 +66,7 @@ import Inputmask from "inputmask";
 		});
 	}
 
-	w.netliva_collection_contact_init = () => { init(); };
+	$(document).on("netliva:collectionAdded",init);
+
 
 })(jQuery, window, Inputmask);
