@@ -42,7 +42,8 @@ import 'bootstrap-tagsinput/src/bootstrap-tagsinput.css'
 
 				var value;
 				try { value  = JSON.parse(ms.data.value); }
-				catch(err){ value = []; }
+				catch(err){ value = ms.data.value; }
+
 				$.each(value, function (val, data) {
 					data.key = data.key+"";
 					data.value = data.value+"";
