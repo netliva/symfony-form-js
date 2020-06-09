@@ -7,6 +7,7 @@ import 'jquery-form';
 		$(".be_ajax_form").each(function() {
 			$(this).ajaxForm({
 				dataType: 'json',
+				beforeSubmit: () => { $(this).find('button').prop("disabled", 1); },
 				success:ajaxFormSuccess,
 				type: $(this).attr("method")
 			}).removeClass("be_ajax_form").addClass("ajax_form");
@@ -16,6 +17,7 @@ import 'jquery-form';
 	window.ajaxFormSuccess = function (response, statusText, xhr, $form) {
 		$(".form-control").removeClass("is-invalid is-valid");
 		$form.find(".invalid-feedback").remove();
+		$form.find('button').prop("disabled", 1);
 		if (response.situ === 'success')
 		{
 
