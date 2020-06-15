@@ -73,6 +73,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 						$($input.data("element")).val(item.key);
 						$($input.data("element")).data("datas",item);
 					}
+					$($input.data("element")).change();
 				},
 				onCancel: function () {
 					if ($input.data("multiselect"))
