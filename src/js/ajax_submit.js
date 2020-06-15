@@ -17,7 +17,7 @@ import 'jquery-form';
 	window.ajaxFormSuccess = function (response, statusText, xhr, $form) {
 		$(".form-control").removeClass("is-invalid is-valid");
 		$form.find(".invalid-feedback").remove();
-		$form.find('button').prop("disabled", 1);
+		$form.find('button').prop("disabled", 0);
 		if (response.situ === 'success')
 		{
 
