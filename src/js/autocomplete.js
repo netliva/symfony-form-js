@@ -50,6 +50,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 		}
 
 		let th = $input.typeahead({
+			input: '#'+$input.attr('id'),
 			hint: true,
 			highlight: true,
 			minLength: 1,
