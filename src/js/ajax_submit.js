@@ -31,47 +31,45 @@ import 'jquery-form';
 			{
 				$(".alert").slideUp(1000);
 			}
-
-			if(response.removeForm !== false)
+			else
 			{
 				$form.remove();
 			}
 
-			if(response.hideModal === true || response.hideModal === undefined)
+			if(response.hideModal)
 			{
-				$(".modal").modal("hide");
+				if (typeof response.hideModal === 'boolean')
+					$(".modal").modal("hide");
+				else if (typeof response.hideModal === 'string')
+					$(response.hideModal).modal("hide");
 			}
 
-			if(response.noty !== undefined)
+			if (response.alert !== undefined && typeof window.success == "function" )
 			{
-				$.notify(response.noty.message, response.noty.class);
+				window.success(response.alert);
 			}
 		}
 		else
 		{
-			if (response.alert !== undefined)
+			if (response.alert !== undefined && typeof window.error == "function" )
 			{
-				$(".modal").modal("hide");
-				responseAlert(response.alert.title, response.alert.text, response.alert.type, response.alert.closeTime ? response.alert.closeTime:2500 ,response.alert.refresh ? response.alert.refresh : false);
+				window.error(response.alert);
+			}
 
-			}
-			else
-			{
-				$form.find(".form-control").each(function () {
-					$(this).addClass("is-valid");
+			$form.find(".form-control").each(function () {
+				$(this).addClass("is-valid");
+			});
+			$.each(response.errors, function(name, err) {
+				let errorsText = '<ul class="invalid-feedback list-unstyled">';
+				$.each(err, function(n, errorText) {
+					errorsText += "<li>"+errorText+"</li>";
 				});
-				$.each(response.errors, function(name, err) {
-					let errorsText = '<ul class="invalid-feedback list-unstyled">';
-					$.each(err, function(n, errorText) {
-						errorsText += "<li>"+errorText+"</li>";
-					});
-					errorsText += "</ul>";
-					$("#"+name)
-						.removeClass("is-valid")
-						.addClass("is-invalid")
-						.after(errorsText);
-				});
-			}
+				errorsText += "</ul>";
+				$("#"+name)
+					.removeClass("is-valid")
+					.addClass("is-invalid")
+					.after(errorsText);
+			});
 
 		}
 		if (response.refresh) window.location.reload();
