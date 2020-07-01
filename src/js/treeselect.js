@@ -41,7 +41,7 @@ import 'bootstrap-tagsinput/src/bootstrap-tagsinput.css'
 				}
 
 				var value;
-				try { value  = JSON.parse(ms.data.value); }
+				try { value = typeof value == 'string' ? JSON.parse(ms.data.value) : ms.data.value; }
 				catch(err){ value = ms.data.value; }
 
 				$.each(value, function (val, data) {
