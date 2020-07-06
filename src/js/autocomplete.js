@@ -100,6 +100,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 				success:function(response){
 					$input.val(response.value);
 					$($input.data("element")).data("datas",response);
+					$($input.data("element")).trigger("netliva:autocomplate:flashback", [$input, response]);
 					$("#loading").hide();
 				}
 			});
