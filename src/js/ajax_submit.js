@@ -70,15 +70,11 @@ import 'jquery-form';
 					else if (response.url) { window.location.href = response.url; }
 					else if (response.script) { eval(response.script); }
 
-
-					$(document).trigger("netliva:ajaxSubmit:success", [response, statusText, xhr, $form]);
 					$form.trigger("netliva:ajaxSubmit:success", [response, statusText, xhr, $form]);
 
 				},
 				error: function (xhr, status, statusText, $form) {
 					$form.find('button').prop("disabled", 0);
-
-					$(document).trigger("netliva:ajaxSubmit:error", [status, xhr.status, statusText, xhr.responseText, $form, xhr]); // event, statusType, statusCode, statusText, response, $formElement, xhr
 					$form.trigger("netliva:ajaxSubmit:error", [status, xhr.status, statusText, xhr.responseText, $form, xhr]); // event, statusType, statusCode,  statusText, response, $formElement, xhr
 
 				},
