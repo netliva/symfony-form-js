@@ -25,6 +25,7 @@ import 'tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css';
 		$input.datetimepicker({
 			locale: 'tr',
 			format: $input.data('viewFormat'),
+			widgetPositioning: { horizontal: 'auto', vertical: 'bottom' },
 			defaultDate : val,
 			icons: {
 				time: 'far fa-clock',
