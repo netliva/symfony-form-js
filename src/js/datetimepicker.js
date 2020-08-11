@@ -20,6 +20,7 @@ import 'tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css';
 		else if ($input.prop("required"))
 		{
 			val = moment();
+			$($input.data("element")).val(val.format($input.data('dbFormat')));
 		}
 
 		$input.datetimepicker({
