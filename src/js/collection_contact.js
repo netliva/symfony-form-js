@@ -22,22 +22,22 @@ import Inputmask from "inputmask";
 			if ($(this).val() === 'gsm') {
 				icon = 'mobile-alt';
 				$addedElement.find(".notiLabel").show();
-				Inputmask({"mask": "+\\9\\0(599)999-9999"}).mask($addedElement.find(".contactContent"));
+				Inputmask({"mask": "+\\9\\0(599)999-9999"}).mask($addedElement.find(".contactContent")[0]);
 			}
 			else if ($(this).val() === 'phone') {
 				icon = 'phone-alt';
 				$addedElement.find(".contactInternal").show();
-				Inputmask({"mask": "+\\9\\0(999)999-9999"}).mask($addedElement.find(".contactContent"));
+				Inputmask({"mask": "+\\9\\0(999)999-9999"}).mask($addedElement.find(".contactContent")[0]);
 			}
 			else if ($(this).val() === 'fax') {
 				icon = 'fax';
-				Inputmask({"mask": "+\\9\\0(999)999-9999"}).mask($addedElement.find(".contactContent"));
+				Inputmask({"mask": "+\\9\\0(999)999-9999"}).mask($addedElement.find(".contactContent")[0]);
 			}
 			else if ($(this).val() === 'email')
 			{
 				icon = 'envelope';
 				$addedElement.find(".notiLabel").show();
-				Inputmask({alias: "email"}).mask($addedElement.find(".contactContent"));
+				Inputmask({alias: "email"}).mask($addedElement.find(".contactContent")[0]);
 			}
 
 			$addedElement.find(".selectContactTypeBtn").find("i").removeClass().addClass("fa fa-"+icon).end().show();
