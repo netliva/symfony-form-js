@@ -1,6 +1,6 @@
 {
   "name": "@netliva/symfony-form",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Netliva Symfony Form Bundle için JS Kütüphanesi",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   "homepage": "https://github.com/netliva/symfony-form-js#readme",
   "dependencies": {
     "@claviska/jquery-minicolors": "^2.3.4",
-    "bootstrap-switch": "^3.4.0",
+    "@netliva/jquery-input-switch": "^0.1.6",
     "sortablejs": "^1.10.2",
     "jquery": "^3.4.1",
     "jquery-typeahead": "^2.11.0",

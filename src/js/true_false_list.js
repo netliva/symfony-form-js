@@ -1,7 +1,6 @@
 
 import Sortable from 'sortablejs';
-import 'bootstrap-switch';
-import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css";
+import '@netliva/jquery-input-switch';
 
 
 (function( $, Sortable) {
@@ -24,10 +23,10 @@ import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css";
 					},
 					init: () => {
 						var say = 0;
-						$.each(tf.vals, function(key, value){
-						if (typeof value == "number"){
+						$.each(tf.vals, function(key, value) {
+							if (typeof value == "number") {
 								value = {is_active: value, order:say};
-							tf.vals[key]= value;
+								tf.vals[key] = value;
 								say++;
 							}
 							if (tf.list_options[key] !== undefined)
@@ -47,14 +46,11 @@ import "bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css";
 
 						tf.e.input.after(tf.e.list);
 
-						tf.switchOptions.onSwitchChange = function(event, state) {
-							tf.vals[$(this).parents("li").data("key")].is_active=state?1:0;
-							tf.e.input.val(JSON.stringify(tf.vals));
-						}
 						tf.e.list.find('.tfListInputSwitch').each(function () {
-							$(this).bootstrapSwitch(tf.switchOptions).bootstrapSwitch("size", tf.switchOptions.size);
-							if ($(this).prop("checked"))
-								$(this).bootstrapSwitch("state", 1);
+							$(this).netlivaSwitch(tf.switchOptions).on('netlivaSwitch.change', function(event, state) {
+								tf.vals[$(this).parents("li").data("key")].is_active=state?1:0;
+								tf.e.input.val(JSON.stringify(tf.vals));
+							});
 						});
 
 						if (tf.is_sortable)

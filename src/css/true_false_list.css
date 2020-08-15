@@ -1,5 +1,5 @@
-.netliva_true_false + ol .bootstrap-switch-label { white-space: nowrap; }
-.netliva_true_false + ol .bootstrap-switch { position: absolute; right: 10px; top: 4px; }
+.netliva_true_false + ol .netliva-switch label { white-space: nowrap; }
+.netliva_true_false + ol .netliva-switch { position: absolute; right: 10px; top: 4px; }
 .netliva_true_false + ol li { padding: 5px 5px 5px 9px; position: relative; background-color: #fafafa; border-bottom: 1px dotted #ddd; border-top: 1px dotted #ddd; margin-top: -1px; }
 .netliva_true_false + ol li label { padding:0; margin:0;  }
 .netliva_true_false + ol li:hover { background-color: #f5f5f5;  }
