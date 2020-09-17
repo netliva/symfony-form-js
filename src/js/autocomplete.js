@@ -54,7 +54,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 			hint: true,
 			highlight: true,
 			minLength: 1,
-			order: "asc",
+			order: null,
 			dynamic: true,
 			delay: 500,
 			backdrop: {"background-color": "#fff"},
