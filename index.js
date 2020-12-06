@@ -10,6 +10,7 @@ import "./src/js/number_spin"
 import "./src/js/color_picker"
 import "./src/js/true_false_list"
 import "./src/js/custom_fields"
+import "./src/js/tagsiput"
 
 import "./src/css/collection_contact.css"
 import "./src/css/collection.css"
