@@ -14,19 +14,30 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 			$.each(value.other_values, function (k, val) {
 				display.push(val);
 			});
-			source[value.conf_key] = {
-				display: display,
-				template: typeof value.template != "undefined" ? value.template : null,
-				ajax: {
-					type: "POST",
-					url: $input.data("autocomplateUrl"),
-					path: "data",
-					data: {
-						letters: "{{query}}",
-						key: value.conf_key
-					}
+			if (value.data)
+			{
+				source[value.conf_key] = {
+					display: display,
+					template: typeof value.template != "undefined" ? value.template : null,
+					data: value.data
 				}
-			};
+			}
+			else
+			{
+				source[value.conf_key] = {
+					display: display,
+					template: typeof value.template != "undefined" ? value.template : null,
+					ajax: {
+						type: "POST",
+						url: $input.data("autocomplateUrl"),
+						path: "data",
+						data: {
+							letters: "{{query}}",
+							key: value.conf_key
+						}
+					}
+				};
+			}
 		});
 
 		var multiselect = null;
