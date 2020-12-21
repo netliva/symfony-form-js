@@ -18,6 +18,7 @@ import 'bootstrap-tagsinput/src/bootstrap-tagsinput.css'
 				where       : $form_row.data("where"),
 				value       : $form_row.data("value"),
 				url         : $form_row.data("url"),
+				selected    : $form_row.data("selected"),
 				deep        : 0,
 				collected   : [],
 			},
@@ -44,14 +45,14 @@ import 'bootstrap-tagsinput/src/bootstrap-tagsinput.css'
 				try { value = typeof ms.data.value == 'string' ? JSON.parse(ms.data.value) : ms.data.value; }
 				catch (err){ value = ms.data.value; }
 
-				$.each(value, function (val, data) {
-					data.key = data.key+"";
-					data.value = data.value+"";
-					if (ms.data.multiselect)
-					{
+				if (ms.data.multiselect)
+				{
+					$.each(value, function (val, data) {
+						data.key = data.key+"";
+						data.value = data.value+"";
 						ms.e.helper.tagsinput('add', data);
-					}
-				});
+					});
+				}
 			},
 			get_options: function (id) {
 				if (typeof id == 'undefined')
@@ -61,15 +62,24 @@ import 'bootstrap-tagsinput/src/bootstrap-tagsinput.css'
 					ms.data.deep = 0;
 					ms.e.back_btn.hide();
 					ms.e.select.removeClass("with_backbtn");
+					if (ms.data.multiselect)
+					{
+						ms.e.selected_text.text("");
+					}
+					else
+					{
+						ms.e.selected_text.text("SEÇİLEN: "+ ms.data.selected);
+						ms.e.input.val(ms.data.value);
+					}
 				}
 				else
 				{
 					ms.e.back_btn.show();
 					ms.e.select.addClass("with_backbtn");
 					ms.data.collected[ms.data.deep-1] = ms.e.select.find("option[value="+id+"]").text();
+					ms.e.selected_text.text("SEÇİLEN: "+ms.data.collected.join(" » "));
 				}
 
-				ms.e.selected_text.text(ms.data.collected.length ?"SEÇİLEN: "+(ms.data.collected.join(" » ")):"");
 
 				if (ms.data.breakable && ms.data.collected.length)
 				{
