@@ -98,13 +98,10 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 						$($input.data("element")).val("");
 						$($input.data("element")).data("datas",null);
 					}
+					$($input.data("element")).change();
 				}
 			}
 		});
-		$input.change(function () {
-			$($input.data("element")).val(JSON.stringify(th.items));
-			$($input.data("element")).data("datas",th.items);
-		})
 
 		if (!$input.data("multiselect") && $($input.data("element")).val() && $input.data("autocomplateBackUrl"))
 		{
