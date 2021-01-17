@@ -39,6 +39,16 @@ import Inputmask from "inputmask";
 				$addedElement.find(".notiLabel").show();
 				Inputmask({alias: "email"}).mask($addedElement.find(".contactContent")[0]);
 			}
+			else if ($(this).val() === 'glob_phone')
+			{
+				icon = 'phone-alt';
+				Inputmask.remove($addedElement.find(".contactContent")[0]);
+			}
+			else if ($(this).val() === 'glob_gsm')
+			{
+				icon = 'mobile-alt';
+				Inputmask.remove($addedElement.find(".contactContent")[0]);
+			}
 
 			$addedElement.find(".selectContactTypeBtn").find("i").removeClass().addClass("fa fa-"+icon).end().show();
 		}).change();
