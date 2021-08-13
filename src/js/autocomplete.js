@@ -9,6 +9,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 
 		var source = {};
 		let conf = typeof $input.data("config") === "object" ? $input.data("config") : JSON.parse($input.data("config"));
+		let activeFilter = typeof $input.data("activeFilter") === "object" ? $input.data("activeFilter") : JSON.parse($input.data("activeFilter"));
 		$.each(conf, function (key, value) {
 			let display = ["value"];
 			$.each(value.other_values, function (k, val) {
@@ -33,7 +34,8 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 						path: "data",
 						data: {
 							letters: "{{query}}",
-							key: value.conf_key
+							key: value.conf_key,
+							extras: { activeFilter : activeFilter },
 						}
 					}
 				};
