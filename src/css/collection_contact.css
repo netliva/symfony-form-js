@@ -8,7 +8,7 @@
 	bottom: 0;
 	display:none;
 	align-items:center;
-	z-index:1;
+	z-index:2;
 }
 .netliva_contact_type_area .btn { margin-left:10px; }
 .netliva_contact_type_area.open {display:flex;}
@@ -16,7 +16,7 @@
 .netliva_collection_contact_area ul li {display:flex;justify-content: center;}
 
 .netliva_collection_contact_area .contactContent { margin:0 10px; }
-.netliva_collection_contact_area .notiLabel { margin:8px 0 0 10px; }
+.netliva_collection_contact_area .notiLabel { margin:8px 0 0 0; white-space: nowrap; }
 .netliva_collection_contact_area .contactInternal { width: 70px !important; }
 .netliva_collection_contact_area .ntlcol-delete-button {
 	display: inline-block !important;
@@ -24,4 +24,6 @@
 	top: auto !important;
 	margin-left: 10px;
 }
+.netliva_contact_fields .iti.iti--allow-dropdown { margin: 0 10px;width: 100%; }
+.netliva_collection_contact_area ul.iti__country-list li {display: block;}
 .selectContactTypeBtn i {width: 16px;}

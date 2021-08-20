@@ -1,6 +1,7 @@
 import Inputmask from "inputmask";
+import intlTelInput from 'intl-tel-input';
 
-(function ($, window, Inputmask) {
+(function ($, window, Inputmask, intlTelInput) {
 
 	function contactCollect ($addedElement)
 	{
@@ -18,6 +19,13 @@ import Inputmask from "inputmask";
 			$addedElement.find(".contactInternal").hide();
 			$addedElement.find(".notiLabel").hide();
 
+			if ($addedElement.data('iti'))
+			{
+				$addedElement.data('iti').destroy();
+				$addedElement.data('iti', null);
+			}
+
+			Inputmask.remove($addedElement.find(".contactContent")[0]);
 
 			if ($(this).val() === 'gsm') {
 				icon = 'mobile-alt';
@@ -42,14 +50,18 @@ import Inputmask from "inputmask";
 			else if ($(this).val() === 'glob_phone')
 			{
 				icon = 'phone-alt';
-				Inputmask.remove($addedElement.find(".contactContent")[0]);
+				$addedElement.find(".notiLabel").show();
+				Inputmask({"regex": "\\+\\d*"}).mask($addedElement.find(".contactContent")[0]);
+				$addedElement.data('iti', intlTelInput($addedElement.find(".contactContent")[0], {}))
 			}
 			else if ($(this).val() === 'glob_gsm')
 			{
 				icon = 'mobile-alt';
-				Inputmask.remove($addedElement.find(".contactContent")[0]);
+				$addedElement.find(".notiLabel").show();
+				Inputmask({"regex": "\\+\\d*"}).mask($addedElement.find(".contactContent")[0]);
+				$addedElement.data('iti', intlTelInput($addedElement.find(".contactContent")[0], {}));
 			}
-
+			$addedElement.find(".contactContent").attr('placeholder','');
 			$addedElement.find(".selectContactTypeBtn").find("i").removeClass().addClass("fa fa-"+icon).end().show();
 		}).change();
 
@@ -77,4 +89,4 @@ import Inputmask from "inputmask";
 	}
 
 
-})(jQuery, window, Inputmask);
+})(jQuery, window, Inputmask, intlTelInput);

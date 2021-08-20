@@ -1,6 +1,6 @@
 {
   "name": "@netliva/symfony-form",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Netliva Symfony Form Bundle için JS Kütüphanesi",
   "main": "index.js",
   "scripts": {
@@ -24,14 +24,15 @@
   "dependencies": {
     "@claviska/jquery-minicolors": "^2.3.4",
     "@netliva/jquery-input-switch": "^0.1.6",
-    "sortablejs": "^1.10.2",
-    "jquery": "^3.4.1",
-    "jquery-typeahead": "^2.11.0",
     "bootstrap-tagsinput": "^0.7.1",
-    "tempusdominus-bootstrap-4": "^5.1.2",
-    "jquery-form": "^4.2.2",
-    "inputmask": "^5.0.3",
     "bootstrap-touchspin": "^4.3.0",
-    "moment": "^2.24.0"
+    "inputmask": "^5.0.3",
+    "intl-tel-input": "^17.0.13",
+    "jquery": "^3.4.1",
+    "jquery-form": "^4.2.2",
+    "jquery-typeahead": "^2.11.0",
+    "moment": "^2.24.0",
+    "sortablejs": "^1.10.2",
+    "tempusdominus-bootstrap-4": "^5.1.2"
   }
 }

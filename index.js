@@ -12,6 +12,7 @@ import "./src/js/true_false_list"
 import "./src/js/custom_fields"
 import "./src/js/tagsiput"
 
+import 'intl-tel-input/build/css/intlTelInput.css';
 import "./src/css/collection_contact.css"
 import "./src/css/collection.css"
 import "./src/css/icon_type.css"
