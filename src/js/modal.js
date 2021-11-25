@@ -1,8 +1,11 @@
 var NetlivaSimpleModal = {
 	open: function (options){
-		options = $.extend({content: '', title: '', class: 'info', buttons: null, ajax:null, init:()=>{}}, options);
+		options = $.extend({content: '', title: '', class: 'info', buttons: null, width: 500, ajax:null, init:()=>{}}, options);
 
 		if (!$("#netliva_icon_modal").length) NetlivaSimpleModal.create();
+
+		if (options.width)
+			$("#netliva_icon_modal").find('.modal-dialog').css({width: options.width, maxWidth: options.width});
 
 		$("#netliva_icon_modal .modal-title").text(options.title);
 		if (options.ajax)
@@ -24,9 +27,18 @@ var NetlivaSimpleModal = {
 			options.init();
 		}
 
+		var zi = 0;
+		$('.modal.fade').each(function() {
+			if (zi < $(this).css('z-index'))
+				zi = $(this).css('z-index');
+		});
+		$("#netliva_icon_modal").css('z-index', zi+10);
+
 		$("#netliva_icon_modal .modal-header").removeClass().addClass("modal-header bg-"+options.class);
 		$("#netliva_icon_modal").modal("show");
 		if (options.buttons) NetlivaSimpleModal.create_buttons(options.buttons);
+
+		$("#netliva_icon_modal").next().css('z-index', zi+9);
 	},
 	close: function () {
 		$("#netliva_icon_modal").modal("hide");
