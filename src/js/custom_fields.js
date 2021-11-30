@@ -281,7 +281,7 @@ import Inputmask from "inputmask";
 			if ($(this).attr("ncf-mask-aphaplus") !== "OK")
 			{
 				$(this).attr("ncf-mask-aphaplus", "OK");
-				Inputmask({regex: "[a-zA-Z0-9_-\.,]*"}).mask(this);
+				Inputmask({regex: "[a-zA-Z0-9_\.,\-]*"}).mask(this);
 			}
 		});
 		$("[ncf-mask-numeric]").each(function () {
