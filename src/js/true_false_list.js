@@ -23,6 +23,7 @@ import '@netliva/jquery-input-switch';
 					},
 					init: () => {
 						var say = 0;
+						var max_say = 0;
 						$.each(tf.vals, function(key, value) {
 							if (typeof value == "number") {
 								value = {is_active: value, order:say};
@@ -31,14 +32,15 @@ import '@netliva/jquery-input-switch';
 							}
 							if (tf.list_options[key] !== undefined)
 							{
+								if (max_say < value.order) max_say = value.order;
 								tf.e.list.append('<li data-key="'+key+'" data-order="'+value.order+'" ><span class="sortableHandle"></span><label>'+tf.list_options[key]+'</label> <input type="checkbox" class="tfListInputSwitch" '+(value.is_active?"checked='1'":"")+'></li>');
 								delete(tf.list_options[key]);
 							}
 						});
 						$.each(tf.list_options, function(key, value){
-							tf.e.list.append('<li data-key="'+key+'" data-order="'+say+'"><span class="sortableHandle"></span><label>'+value+'</label> <input type="checkbox" class="tfListInputSwitch"></li>');
-							tf.vals[key] = {is_active: 0, order:say};
-							say++;
+							max_say++;
+							tf.e.list.append('<li data-key="'+key+'" data-order="'+max_say+'"><span class="sortableHandle"></span><label>'+value+'</label> <input type="checkbox" class="tfListInputSwitch"></li>');
+							tf.vals[key] = {is_active: 0, order:max_say};
 						});
 
 						tf.sort(tf.e.list, {dataName:"order"});
