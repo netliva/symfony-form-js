@@ -12,6 +12,8 @@ import 'jquery-form';
 					$(".form-control").removeClass("is-invalid is-valid");
 					$form.find(".invalid-feedback").remove();
 					$form.find('button').prop("disabled", 0);
+					$form.trigger("netliva:ajaxSubmit:success", [response, statusText, xhr, $form]);
+
 					if (response.situ === 'success')
 					{
 
@@ -70,7 +72,6 @@ import 'jquery-form';
 					else if (response.url) { window.location.href = response.url; }
 					else if (response.script) { eval(response.script); }
 
-					$form.trigger("netliva:ajaxSubmit:success", [response, statusText, xhr, $form]);
 
 				},
 				error: function (xhr, status, statusText, $form) {
