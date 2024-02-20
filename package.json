@@ -1,6 +1,6 @@
 {
   "name": "@netliva/symfony-form",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "Netliva Symfony Form Bundle için JS Kütüphanesi",
   "main": "index.js",
   "scripts": {
