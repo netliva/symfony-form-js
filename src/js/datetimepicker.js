@@ -42,7 +42,7 @@ import 'tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css';
 		});
 		$input.on("change.datetimepicker",function (e) {
 			if (e.date) $($input.data("element")).val(moment(e.date).format($input.data('dbFormat')));
-			else $($input.data("element")).val("");
+			else $input.datetimepicker('date', moment($input.val(), $input.data('viewFormat')));
 		});
 		$input.focus(function () {
 			$input.datetimepicker("show");
