@@ -1,3 +1,9 @@
+.netliva_collection_contact_area .list-group-item:not(.addCollBtn) .btn {
+	width: 28px !important;
+	padding: 5px;
+	height: 39px;
+}
+
 .netliva_contact_type_area {
 	padding: 0 20px;
 	left: 0;
@@ -13,7 +19,24 @@
 .netliva_contact_type_area .btn { margin-left:10px; }
 .netliva_contact_type_area.open {display:flex;}
 .netliva_contact_fields {display:flex;flex: 2;}
-.netliva_collection_contact_area ul li {display:flex;justify-content: center;}
+.netliva_collection_contact_area ul li {display:flex;justify-content: center; align-items: start;}
+
+.netliva_contact_fields_extra_areas {position: relative;}
+.netliva_contact_fields_row .closeContactExtraBtn { display: none; }
+.netliva_contact_fields_row .netliva_contact_fields_extra_areas { display: none; }
+.netliva_contact_fields_row.open-extra-area .netliva_contact_fields_extra_areas { display: flex; flex-direction: column; }
+.netliva_contact_fields_row.open-extra-area .openContactExtraBtn { display: none; }
+.netliva_contact_fields_co_areas {margin: auto !important;}
+.netliva_contact_fields_row .openContactExtraBtn {
+	padding: 5px;
+	margin-left: 5px;
+	margin-right: -6px;
+}
+.netliva_contact_fields_row.open-extra-area .closeContactExtraBtn {
+	display: inline-block;
+	position: absolute;
+	right: -38px;
+}
 
 .netliva_collection_contact_area .contactContent { margin:0 10px; }
 .netliva_collection_contact_area .notiLabel { margin:8px 0 0 0; white-space: nowrap; }

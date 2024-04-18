@@ -13,6 +13,17 @@ import intlTelInput from 'intl-tel-input';
 			$(this).parent().removeClass("open");
 			return false;
 		});
+		$addedElement.find(".openContactExtraBtn").click(function () {
+			$(this).closest('.netliva_contact_fields_row').addClass("open-extra-area");
+			return false;
+		});
+		$addedElement.find(".netliva_contact_fields .notiLabel input").change(function () {
+				$(this).next().html($(this).prop('checked')?"İletişim İzni Var":"İletişim İzni Yok");
+		}).change();
+		$addedElement.find(".closeContactExtraBtn").click(function () {
+			$(this).closest('.netliva_contact_fields_row').removeClass("open-extra-area");
+			return false;
+		});
 		$addedElement.find(".contactType").change(function () {
 			$(this).parent().removeClass("open");
 			var icon = '';
