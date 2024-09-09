@@ -17,7 +17,7 @@ import Inputmask from "inputmask";
 						vals: $(this).data('vals'),
 						id: $(this).data('id'),
 						show_keys: !!$(this).data('showFieldKeys'),
-						types: {text:"Kısa Metin", textarea:"Metin Alanı", choice:"Seçim", date:"Tarih", datetime:"Tarih Saat"},
+						types: {text:"Kısa Metin", textarea:"Metin Alanı", choice:"Seçim", date:"Tarih", datetime:"Tarih Saat", file:"Dosya"},
 						editKey: null,
 					},
 					el: {
@@ -187,6 +187,13 @@ import Inputmask from "inputmask";
 								required  : field_area.find(".ncf-required:checked").val() == "1",
 							};
 						},
+						file: (key, field_area) => {
+							ncf.data.vals["fields"][key] = {
+								type      : "file",
+								label     : field_area.find(".ncf-field-label").val(),
+								required  : field_area.find(".ncf-required:checked").val() == "1",
+							};
+						},
 						choice: (key, field_area) => {
 							let optTemp = field_area.find("textarea").val().split("\n");
 							var opts = [];
@@ -224,6 +231,12 @@ import Inputmask from "inputmask";
 							field_area.find(".ncf-field-label").val(data.label);
 						},
 						datetime: (key) => {
+							let field_area = ncf.el.area.find('.ncf-field-options-'+ncf.data.vals["fields"][ncf.data.editKey]["type"]);
+							let data = ncf.data.vals["fields"][key];
+							field_area.find(".ncf-required[value="+(data.required?1:0)+"]").prop("checked",true);
+							field_area.find(".ncf-field-label").val(data.label);
+						},
+						file: (key) => {
 							let field_area = ncf.el.area.find('.ncf-field-options-'+ncf.data.vals["fields"][ncf.data.editKey]["type"]);
 							let data = ncf.data.vals["fields"][key];
 							field_area.find(".ncf-required[value="+(data.required?1:0)+"]").prop("checked",true);
