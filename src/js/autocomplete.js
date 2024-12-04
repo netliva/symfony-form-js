@@ -107,6 +107,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 
 		if (!$input.data("multiselect") && $($input.data("element")).val() && $input.data("autocomplateBackUrl"))
 		{
+			$input.attr("netliva_autocomplete_callback", "loading");
 			$.ajax({
 				url: $input.data("autocomplateBackUrl"),
 				method: "POST",
@@ -115,7 +116,7 @@ import 'jquery-typeahead/src/jquery.typeahead.scss';
 					$input.val(response.value);
 					$($input.data("element")).data("datas",response);
 					$($input.data("element")).trigger("netliva:autocomplate:flashback", [$input, response]);
-					$("#loading").hide();
+					$input.attr("netliva_autocomplete_callback", "loaded");
 				}
 			});
 		}
